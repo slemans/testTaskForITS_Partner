@@ -28,30 +28,30 @@ struct User: Codable {
         case index, guid, isActive, balance, picture, age, eyeColor, name, gender, company, email, phone, address, about, registered, latitude, longitude, tags, friends, greeting, favoriteFruit
     }
     
-//    init?(user: User) {
-//        self.id = user.id
-//        self.index = user.index
-//        self.guid = user.guid
-//        self.isActive = user.isActive
-//        self.balance = user.balance
-//        self.picture = user.picture
-//        self.age = user.age
-//        self.eyeColor = user.eyeColor
-//        self.name = user.name
-//        self.gender = user.gender
-//        self.company = user.company
-//        self.email = user.email
-//        self.phone = user.phone
-//        self.address = user.address
-//        self.about = user.about
-//        self.registered = user.registered
-//        self.latitude = user.latitude
-//        self.longitude = user.longitude
-//        self.tags = user.tags
-//        self.friends = user.friends
-//        self.greeting = user.greeting
-//        self.favoriteFruit = user.favoriteFruit
-//    }
+    init?(user: User) {
+        self.id = user.id
+        self.index = user.index
+        self.guid = user.guid
+        self.isActive = user.isActive
+        self.balance = user.balance
+        self.picture = user.picture
+        self.age = user.age
+        self.eyeColor = user.eyeColor
+        self.name = user.name
+        self.gender = user.gender
+        self.company = user.company
+        self.email = user.email
+        self.phone = user.phone
+        self.address = user.address
+        self.about = user.about
+        self.registered = user.registered
+        self.latitude = user.latitude
+        self.longitude = user.longitude
+        self.tags = user.tags
+        self.friends = user.friends
+        self.greeting = user.greeting
+        self.favoriteFruit = user.favoriteFruit
+    }
 }
 
 struct Friend: Codable {

@@ -18,49 +18,27 @@ class ViewControllerTableView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        gethData()
+        getUrlSession()
         // Do any additional setup after loading the view.
     }
     
-//    private func getUrlSession(type user: User) {
-//        serviseAPI.fetchUrlSession() { users in
-//            self.users = users
-//                DispatchQueue.main.async {
-//                    self.tableView.reloadData()
-//                }
-//        }
-//    }
-
-    
-    func gethData() {
-        let jsonUrl = "https://json-generator.com/api/json/get/clyWAUbaxu?indent=2"
-        guard let url = URL(string: jsonUrl) else { return }
-
-        let task = URLSession.shared.dataTask(with: url) { data, _, _ in
-            guard let data = data else { return }
-//            let json = JSON(value)
-            print(data)
-            do {
-                self.users = try JSONDecoder().decode([User].self, from: data)
-                
-                print(self.users)
-            } catch {
-                print(error)
-            }
-            DispatchQueue.main.async {
-                print(self.users)
-                self.table.reloadData()
-            }
+    func getUrlSession() {
+        serviseAPI.fetchUrlSession() { [weak self] users in
+            self?.users = users
+                DispatchQueue.main.async {
+                    self?.table.reloadData()
+                }
         }
-        task.resume()
     }
+    
+
 
 
 }
 
 extension ViewControllerTableView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        return users.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
