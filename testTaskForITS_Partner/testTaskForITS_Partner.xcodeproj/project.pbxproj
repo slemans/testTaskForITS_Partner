@@ -87,6 +87,13 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		7FBF7C06278B5829005D83D9 /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Collection;
+			sourceTree = "<group>";
+		};
 		7FE3FA9F2783307800CE561E = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +157,7 @@
 			children = (
 				7FE3FAAF2783307800CE561E /* ViewController.swift */,
 				7FE3FAC52783355600CE561E /* TableViewController.swift */,
+				7FBF7C06278B5829005D83D9 /* Collection */,
 				7FE3FAC9278336AA00CE561E /* Table */,
 				7FBF7BFB2785D2A0005D83D9 /* Body */,
 			);

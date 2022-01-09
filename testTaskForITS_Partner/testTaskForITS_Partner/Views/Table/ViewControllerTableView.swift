@@ -6,24 +6,25 @@
 //
 
 import UIKit
-//import SwiftyJSON
 
 class ViewControllerTableView: UIViewController {
 
     @IBOutlet weak var repeatBt: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activitiIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var segmentControlGender: UISegmentedControl!
+    @IBOutlet weak var segmentControlAge: UISegmentedControl!
     
     var serviseAPI = ServiseAPI()
     var users: [User] = []
     var oldArrayUsers: [User] = []
+    var filterUsers: [User] = []
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         getUrlSession()
-        // Do any additional setup after loading the view.
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -38,10 +39,8 @@ class ViewControllerTableView: UIViewController {
     @IBAction func segmentedControlGramedAction(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 1:
-            print("Женщины")
             seachGenderUser(gender: .famale)
         case 2:
-            print("Мужик")
             seachGenderUser(gender: .male)
         default:
             users = oldArrayUsers
@@ -58,6 +57,7 @@ class ViewControllerTableView: UIViewController {
                     users.append(user)
                 }
             }
+            filterUsers = users
             tableView.reloadData()
         default:
             for user in oldArrayUsers{
@@ -65,10 +65,9 @@ class ViewControllerTableView: UIViewController {
                     users.append(user)
                 }
             }
+            filterUsers = users
             tableView.reloadData()
         }
-        
-        
     }
     
     @IBAction func segmentedControlAgeФсешщт(_ sender: UISegmentedControl) {
@@ -82,8 +81,13 @@ class ViewControllerTableView: UIViewController {
             users = increases
             tableView.reloadData()
         default:
-            users = oldArrayUsers
-            tableView.reloadData()
+            if oldArrayUsers.count == users.count{
+                users = oldArrayUsers
+                tableView.reloadData()
+            } else {
+                users = filterUsers
+                tableView.reloadData()
+            }
         }
     }
     
@@ -93,6 +97,8 @@ class ViewControllerTableView: UIViewController {
     
     @IBAction func repiatBtAct() {
         users.removeAll()
+        segmentControlGender.selectedSegmentIndex = 0
+        segmentControlAge.selectedSegmentIndex = 0
         tableView.reloadData()
         getUrlSession()
     }

@@ -21,7 +21,6 @@ class ViewControllerFullInfo: UIViewController {
         super.viewDidLoad()
         icon.image = serviseAPI.getImagesIcon(gender: userFullInformation.gender)
         createArrayUser(user: userFullInformation)
-        print(userFullInformation.picture)
         putImage(image: userFullInformation.picture)
         navigationItem.title = userFullInformation.name
     }
