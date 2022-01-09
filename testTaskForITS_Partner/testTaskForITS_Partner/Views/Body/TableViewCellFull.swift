@@ -11,16 +11,17 @@ class TableViewCellFull: UITableViewCell {
 
     @IBOutlet weak var infoPart: UILabel!
     @IBOutlet weak var userInform: UILabel!
-    
+    var imageUrl: String!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     func fetchDataUserFull(userFull: UserFull){
         infoPart.text = userFull.firstPart
         userInform.text = userFull.lastPart
     }
-
+    
+    
+    
 }

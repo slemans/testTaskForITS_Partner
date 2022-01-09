@@ -12,7 +12,8 @@
 		7FBF7BFA2784D9AE005D83D9 /* UserFull.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBF7BF92784D9AE005D83D9 /* UserFull.swift */; };
 		7FBF7BFD2785D2C7005D83D9 /* MapVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBF7BFC2785D2C7005D83D9 /* MapVc.swift */; };
 		7FBF7C002785DDFC005D83D9 /* WorkWithImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBF7BFF2785DDFC005D83D9 /* WorkWithImage.swift */; };
-		7FBF7C022785FA09005D83D9 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBF7C012785FA09005D83D9 /* Station.swift */; };
+		7FBF7C022785FA09005D83D9 /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBF7C012785FA09005D83D9 /* Artwork.swift */; };
+		7FBF7C052788E215005D83D9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBF7C042788E215005D83D9 /* Constants.swift */; };
 		7FE3FAAC2783307800CE561E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE3FAAB2783307800CE561E /* AppDelegate.swift */; };
 		7FE3FAAE2783307800CE561E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE3FAAD2783307800CE561E /* SceneDelegate.swift */; };
 		7FE3FAB02783307800CE561E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE3FAAF2783307800CE561E /* ViewController.swift */; };
@@ -32,7 +33,8 @@
 		7FBF7BF92784D9AE005D83D9 /* UserFull.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFull.swift; sourceTree = "<group>"; };
 		7FBF7BFC2785D2C7005D83D9 /* MapVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVc.swift; sourceTree = "<group>"; };
 		7FBF7BFF2785DDFC005D83D9 /* WorkWithImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkWithImage.swift; sourceTree = "<group>"; };
-		7FBF7C012785FA09005D83D9 /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
+		7FBF7C012785FA09005D83D9 /* Artwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artwork.swift; sourceTree = "<group>"; };
+		7FBF7C042788E215005D83D9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7FE3FAA82783307800CE561E /* testTaskForITS_Partner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testTaskForITS_Partner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FE3FAAB2783307800CE561E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FE3FAAD2783307800CE561E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +79,14 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		7FBF7C032788E202005D83D9 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				7FBF7C042788E215005D83D9 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		7FE3FA9F2783307800CE561E = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +106,7 @@
 		7FE3FAAA2783307800CE561E /* testTaskForITS_Partner */ = {
 			isa = PBXGroup;
 			children = (
+				7FBF7C032788E202005D83D9 /* Constants */,
 				7FBF7BFE2785DDD7005D83D9 /* Service */,
 				7FE3FAC42783319400CE561E /* Model */,
 				7FE3FAC22783316E00CE561E /* Views */,
@@ -158,7 +169,7 @@
 			children = (
 				7FE3FACE27833A2000CE561E /* Users.swift */,
 				7FBF7BF92784D9AE005D83D9 /* UserFull.swift */,
-				7FBF7C012785FA09005D83D9 /* Station.swift */,
+				7FBF7C012785FA09005D83D9 /* Artwork.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -248,8 +259,9 @@
 				7FBF7BFA2784D9AE005D83D9 /* UserFull.swift in Sources */,
 				7FBF7C002785DDFC005D83D9 /* WorkWithImage.swift in Sources */,
 				7FBF7BF82784CF6D005D83D9 /* TableViewCellFull.swift in Sources */,
+				7FBF7C052788E215005D83D9 /* Constants.swift in Sources */,
 				7FE3FAB02783307800CE561E /* ViewController.swift in Sources */,
-				7FBF7C022785FA09005D83D9 /* Station.swift in Sources */,
+				7FBF7C022785FA09005D83D9 /* Artwork.swift in Sources */,
 				7FE3FAAC2783307800CE561E /* AppDelegate.swift in Sources */,
 				7FE3FACB278336C000CE561E /* TableViewCell.swift in Sources */,
 				7FE3FAAE2783307800CE561E /* SceneDelegate.swift in Sources */,
