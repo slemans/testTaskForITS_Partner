@@ -14,13 +14,11 @@ class ViewControllerTableView: UIViewController {
     @IBOutlet weak var activitiIndicator: UIActivityIndicatorView!
     @IBOutlet weak var segmentControlGender: UISegmentedControl!
     @IBOutlet weak var segmentControlAge: UISegmentedControl!
+    @IBOutlet weak var secondView: UIView!
     
-    var serviseAPI = ServiseAPI()
     var users: [User] = []
     var oldArrayUsers: [User] = []
     var filterUsers: [User] = []
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,41 +34,36 @@ class ViewControllerTableView: UIViewController {
             segueMapVc.users = users
         }
     }
+    
     @IBAction func segmentedControlGramedAction(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 1:
-            seachGenderUser(gender: .famale)
+            segmentControlAge.selectedSegmentIndex = 0
+            users.removeAll()
+            OtherFuncFor.otherFuncSingl.seachGenderUser(gender: .famale, oldArrayUsers: oldArrayUsers) { complition in
+                users = complition
+            } arrayUsersOld: { complitionTwo in
+                filterUsers = complitionTwo
+            }
+            tableView.reloadData()
         case 2:
-            seachGenderUser(gender: .male)
+            segmentControlAge.selectedSegmentIndex = 0
+            users.removeAll()
+            OtherFuncFor.otherFuncSingl.seachGenderUser(gender: .male, oldArrayUsers: oldArrayUsers) { complition in
+                users = complition
+            } arrayUsersOld: { complitionTwo in
+                filterUsers = complitionTwo
+            }
+            tableView.reloadData()
         default:
+            segmentControlAge.selectedSegmentIndex = 0
             users = oldArrayUsers
             tableView.reloadData()
         }
     }
+
     
-    func seachGenderUser(gender: Gender){
-        users.removeAll()
-        switch gender {
-        case .famale:
-            for user in oldArrayUsers{
-                if user.gender == "female"{
-                    users.append(user)
-                }
-            }
-            filterUsers = users
-            tableView.reloadData()
-        default:
-            for user in oldArrayUsers{
-                if user.gender == "male"{
-                    users.append(user)
-                }
-            }
-            filterUsers = users
-            tableView.reloadData()
-        }
-    }
-    
-    @IBAction func segmentedControlAgeФсешщт(_ sender: UISegmentedControl) {
+    @IBAction func segmentedControlAgeAct(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 1:
             let decrease = users.sorted { $0.age > $1.age }
@@ -91,10 +84,6 @@ class ViewControllerTableView: UIViewController {
         }
     }
     
-    
-
-    
-    
     @IBAction func repiatBtAct() {
         users.removeAll()
         segmentControlGender.selectedSegmentIndex = 0
@@ -102,13 +91,14 @@ class ViewControllerTableView: UIViewController {
         tableView.reloadData()
         getUrlSession()
     }
-    func getUrlSession() {
-        serviseAPI.fetchUrlSession() { [weak self] users in
+    private func getUrlSession() {
+        ServiseAPI.apiSingl.fetchUrlSession { [weak self] users in
             self?.oldArrayUsers = users
             self?.users = users
                 DispatchQueue.main.async {
                     self?.tableView.reloadData()
                     self?.activitiIndicator.stopAnimating()
+                    self?.secondView.alpha = 0
                 }
         }
     }

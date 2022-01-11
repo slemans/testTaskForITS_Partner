@@ -15,14 +15,13 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var age: UILabel!
     
     var user: User!
-    var serviseAPI = WorkWithImage()
 
     override func awakeFromNib() {
         super.awakeFromNib()
     }
 
     func fetchDataUser(user: User){
-        icon.image = serviseAPI.getImagesIcon(gender: user.gender)
+        icon.image = OtherFuncFor.otherFuncSingl.getImagesIcon(gender: user.gender)
         name.text = user.name
         age.text = String(user.age) + " лет"
     }

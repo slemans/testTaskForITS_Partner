@@ -8,6 +8,10 @@
 import Foundation
 
 class ServiseAPI {
+    
+    static var apiSingl = ServiseAPI()
+    private init() {}
+    
     let jsonUrl = "https://api.json-generator.com/templates/0SZV_OPhVzbr/data?access_token=czvx85ecg2wsw0xiselmbqntusvbx9n4v4ng5hdj"
     func fetchUrlSession(completionHandler: @escaping ([User]) -> Void) {
         guard let url = URL(string: jsonUrl) else { return }

@@ -10,42 +10,61 @@ import UIKit
 class MapVc: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
-//    {
-//        didSet {
-//                let noLocation = CLLocationCoordinate2D()
-//            let viewRegion = MKCoordinateRegion(center: noLocation, latitudinalMeters: 0, longitudinalMeters: 0)
-//                self.mapView.setRegion(viewRegion, animated: false)
-//            }
-//    }
 
     var nameUser: String!
     var latitude: Double!
     var longitude: Double!
     var users: [User] = []
+    var numberChoseUser = 0
 
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         putUser(users: users)
-        let initialLocation = CLLocation(latitude: users[0].latitude, longitude: users[0].longitude)
+        llocationUser(number: 0)
+    }
+
+    @IBAction func beforeUser() {
+        if numberChoseUser == 0 {
+            numberChoseUser = users.count - 1
+            llocationUser(number: numberChoseUser)
+        } else {
+            numberChoseUser -= 1
+            llocationUser(number: numberChoseUser)
+        }
+
+    }
+
+    @IBAction func afterUser() {
+        if numberChoseUser == users.count - 1 {
+            numberChoseUser = 0
+            llocationUser(number: numberChoseUser)
+        } else {
+            numberChoseUser += 1
+            llocationUser(number: numberChoseUser)
+        }
+    }
+
+    private func llocationUser(number: Int) {
+        let initialLocation = CLLocation(latitude: users[number].latitude, longitude: users[number].longitude)
         mapView.centerToLocation(initialLocation)
     }
-    
-    
 
-    
-    
-    func putUser(users: [User]) {
+
+    private func putUser(users: [User]) {
         for user in users {
             mapView.addAnnotation(Artwork(title: user.name, coordinate: CLLocationCoordinate2D(latitude: user.latitude, longitude: user.longitude)))
         }
     }
 
     @IBAction func zoomIn(_ sender: UIButton) {
-        let span = MKCoordinateSpan(latitudeDelta: mapView.region.span.latitudeDelta * 2, longitudeDelta: mapView.region.span.longitudeDelta * 2)
-        let region = MKCoordinateRegion(center: mapView.region.center, span: span)
-        mapView.setRegion(region, animated: true)
+        mapView.setZoomByDelta(delta: 0.5, animated: true)
+    }
+    @IBAction func zoomOut() {
+        if mapView.zoomLevel > 4 {
+            mapView.setZoomByDelta(delta: 2, animated: true)
+        }
     }
 
     @IBAction func changeMaptype(_ sender: Any) {
@@ -55,12 +74,20 @@ class MapVc: UIViewController {
             mapView.mapType = MKMapType.standard
         }
     }
-    @IBAction func closeVc() {
-        dismiss(animated: true)
-    }
+
 }
 
+extension MKMapView {
+    func setZoomByDelta(delta: Double, animated: Bool) {
+        var _region = region;
+        var _span = region.span;
+        _span.latitudeDelta *= delta;
+        _span.longitudeDelta *= delta;
+        _region.span = _span;
 
+        setRegion(_region, animated: animated)
+    }
+}
 
 
 private extension MKMapView {
@@ -73,4 +100,20 @@ private extension MKMapView {
     }
 }
 
+extension MKMapView {
+    var zoomLevel: Double {
+        get {
+            return log2(360 * (Double(self.frame.size.width / 256) / self.region.span.longitudeDelta)) + 1
+        }
+
+        set (newZoomLevel) {
+            setCenterCoordinate(coordinate: self.centerCoordinate, zoomLevel: newZoomLevel, animated: false)
+        }
+    }
+
+    private func setCenterCoordinate(coordinate: CLLocationCoordinate2D, zoomLevel: Double, animated: Bool) {
+        let span = MKCoordinateSpan(latitudeDelta: 0, longitudeDelta: 360 / pow(2, zoomLevel) * Double(self.frame.size.width) / 256)
+        setRegion(MKCoordinateRegion(center: coordinate, span: span), animated: animated)
+    }
+}
 
