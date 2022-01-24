@@ -383,11 +383,11 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Celina Miles" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kp6-x5-xRU">
-                                                    <rect key="frame" x="57" y="8" width="86.5" height="20.5"/>
+                                                    <rect key="frame" x="52" y="8" width="96.5" height="20.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20.5" id="uD5-C2-K1H"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="19"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -408,7 +408,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="cOr-Vk-oxb" secondAttribute="bottom" constant="16" id="jnk-Jg-LBF"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <size key="customSize" width="200" height="170"/>
                                         <connections>
                                             <outlet property="age" destination="cOr-Vk-oxb" id="MCO-kS-etN"/>
@@ -774,6 +774,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="QLd-gz-wfF" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kOg-Zs-8HW">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -788,8 +789,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="w9f-Zx-Zyt"/>
-        <segue reference="zDK-0K-2fs"/>
+        <segue reference="MLD-Oo-4Q8"/>
+        <segue reference="eDq-TS-7cn"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrowshape.turn.up.left" catalog="system" width="128" height="106"/>

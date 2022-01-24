@@ -112,14 +112,14 @@ extension ViewControllerCollection: UICollectionViewDataSource, UICollectionView
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellCollection", for: indexPath) as! CollectionViewCell
         let user = users[indexPath.row]
         cell.fetchDataUser(user: user)
+        cell.content.layer.cornerRadius = 10
+        cell.content.layer.masksToBounds = true
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let user = users[indexPath.row]
         performSegue(withIdentifier: "segueFullVc", sender: user)
     }
-
-
 }
 
 extension ViewControllerCollection: UICollectionViewDelegateFlowLayout {
