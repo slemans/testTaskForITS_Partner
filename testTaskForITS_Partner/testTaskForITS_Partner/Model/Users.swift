@@ -15,7 +15,8 @@ struct User: Codable {
     let balance: String
     let picture: String
     let age: Int
-    let eyeColor, name, gender, company: String
+    let eyeColor, name, company: String
+    var gender: Gender
     let email, phone, address, about: String
     let registered: String
     let latitude, longitude: Double
@@ -39,6 +40,8 @@ struct User: Codable {
         self.eyeColor = user.eyeColor
         self.name = user.name
         self.gender = user.gender
+
+//        self.gender = user.gender
         self.company = user.company
         self.email = user.email
         self.phone = user.phone
@@ -57,4 +60,9 @@ struct User: Codable {
 struct Friend: Codable {
     let id: Int
     let name: String
+}
+
+enum Gender: String, Codable {
+    case male = "male"
+    case female = "female"
 }

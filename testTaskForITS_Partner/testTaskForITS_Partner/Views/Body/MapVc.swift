@@ -17,8 +17,6 @@ class MapVc: UIViewController {
     var users: [User] = []
     var numberChoseUser = 0
 
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
         putUser(users: users)

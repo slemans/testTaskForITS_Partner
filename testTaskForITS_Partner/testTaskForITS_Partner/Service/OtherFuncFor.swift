@@ -13,45 +13,44 @@ class OtherFuncFor{
     private init() {}
     
     // for CollectionViewCell, TableViewCell
-    func getImagesIcon(gender: String) -> UIImage{
-        if gender == "male"{
-            return #imageLiteral(resourceName: "male")
-        } else {
+    func getImagesIcon(gender: Gender) -> UIImage{
+        if gender == .male{
             return #imageLiteral(resourceName: "iconFamale")
+            
+        } else {
+            return #imageLiteral(resourceName: "male")
         }
     }
-    func choseColor(gender: String) -> UIColor{
-        if gender == "male"{
-            return #colorLiteral(red: 0.1508811976, green: 0.211440719, blue: 1, alpha: 1)
-        } else {
+    func choseColor(gender: Gender) -> UIColor{
+        if gender == .male{
             return #colorLiteral(red: 1, green: 0.09483547046, blue: 0.01818972419, alpha: 1)
+        } else {
+            return #colorLiteral(red: 0.1508811976, green: 0.211440719, blue: 1, alpha: 1)
         }
     }
     
     // for ViewControllerCollection, ViewControllerTableView
-    
-    func seachGenderUser(gender: Gender, oldArrayUsers: [User], arrayUsersFilter: ([User]) -> Void, arrayUsersOld: ([User]) -> Void) {
+
+    func seachGenderUsers(gender: Gender, oldArrayUsers: [User], completion: ([User], [User]) -> Void) {
         var filterUsers: [User] = []
         var users: [User] = []
         switch gender {
-        case .famale:
+        case .female:
             for user in oldArrayUsers {
-                if user.gender == "female" {
+                if user.gender == .female {
                     users.append(user)
                 }
             }
             filterUsers = users
-            arrayUsersFilter(users)
-            arrayUsersOld(filterUsers)
+            completion(users, filterUsers)
         default:
             for user in oldArrayUsers {
-                if user.gender == "male" {
+                if user.gender == .male {
                     users.append(user)
                 }
             }
             filterUsers = users
-            arrayUsersFilter(users)
-            arrayUsersOld(filterUsers)
+            completion(users, filterUsers)
         }
     }
     
@@ -71,7 +70,7 @@ class OtherFuncFor{
         array.append(UserFull(firstPart: "Дата регистрации", lastPart: user.registered))
         array.append(UserFull(firstPart: "Описание", lastPart: user.about))
         array.append(UserFull(firstPart: "Сообщения", lastPart: user.greeting))
-        array.append(UserFull(firstPart: "Пол", lastPart: user.gender))
+        array.append(UserFull(firstPart: "Пол", lastPart: user.gender.rawValue))
         array.append(UserFull(firstPart: "Широта", lastPart: String(user.latitude)))
         array.append(UserFull(firstPart: "Долгота", lastPart: String(user.longitude)))
         array.append(UserFull(firstPart: "Активация", lastPart: String(user.isActive)))

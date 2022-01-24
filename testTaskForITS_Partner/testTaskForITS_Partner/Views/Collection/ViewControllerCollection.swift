@@ -51,19 +51,17 @@ class ViewControllerCollection: UIViewController {
         case 1:
             segmentControlAge.selectedSegmentIndex = 0
             users.removeAll()
-            OtherFuncFor.otherFuncSingl.seachGenderUser(gender: .famale, oldArrayUsers: oldArrayUsers) { complition in
-                users = complition
-            } arrayUsersOld: { complitionTwo in
-                filterUsers = complitionTwo
+            OtherFuncFor.otherFuncSingl.seachGenderUsers(gender: .male, oldArrayUsers: oldArrayUsers) { arrayOne, arrayTwo in
+                users = arrayOne
+                filterUsers = arrayTwo
             }
             collectionView.reloadData()
         case 2:
             segmentControlAge.selectedSegmentIndex = 0
             users.removeAll()
-            OtherFuncFor.otherFuncSingl.seachGenderUser(gender: .male, oldArrayUsers: oldArrayUsers) { complition in
-                users = complition
-            } arrayUsersOld: { complitionTwo in
-                filterUsers = complitionTwo
+            OtherFuncFor.otherFuncSingl.seachGenderUsers(gender: .female, oldArrayUsers: oldArrayUsers) { arrayOne, arrayTwo in
+                users = arrayOne
+                filterUsers = arrayTwo
             }
             collectionView.reloadData()
         default:
@@ -114,14 +112,14 @@ extension ViewControllerCollection: UICollectionViewDataSource, UICollectionView
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellCollection", for: indexPath) as! CollectionViewCell
         let user = users[indexPath.row]
         cell.fetchDataUser(user: user)
+        cell.content.layer.cornerRadius = 10
+        cell.content.layer.masksToBounds = true
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let user = users[indexPath.row]
         performSegue(withIdentifier: "segueFullVc", sender: user)
     }
-
-
 }
 
 extension ViewControllerCollection: UICollectionViewDelegateFlowLayout {

@@ -21,7 +21,4 @@ class TableViewCellFull: UITableViewCell {
         infoPart.text = userFull.firstPart
         userInform.text = userFull.lastPart
     }
-    
-    
-    
 }

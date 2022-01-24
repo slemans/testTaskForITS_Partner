@@ -8,8 +8,5 @@
 import Foundation
 
 
-enum Gender {
-    case male
-    case famale
-}
+
 
