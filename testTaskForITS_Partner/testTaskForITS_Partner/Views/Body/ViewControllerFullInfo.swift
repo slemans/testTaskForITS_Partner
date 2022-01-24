@@ -39,12 +39,12 @@ class ViewControllerFullInfo: UIViewController {
     private func putImage(image: String?) {
         guard let image = image,
             let urlImg = URL(string: image) else { return }
-        URLSession.shared.dataTask(with: urlImg) { data, _, _ in
+        URLSession.shared.dataTask(with: urlImg) { [weak self] data, _, _ in
             let queue = DispatchQueue.global(qos: .utility)
             queue.async {
                 if let data = data, let image = UIImage(data: data) {
                     DispatchQueue.main.async {
-                        self.imageUser.image = image
+                        self?.imageUser.image = image
                     }
                 }
             }

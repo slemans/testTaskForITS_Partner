@@ -51,19 +51,17 @@ class ViewControllerCollection: UIViewController {
         case 1:
             segmentControlAge.selectedSegmentIndex = 0
             users.removeAll()
-            OtherFuncFor.otherFuncSingl.seachGenderUser(gender: .famale, oldArrayUsers: oldArrayUsers) { complition in
-                users = complition
-            } arrayUsersOld: { complitionTwo in
-                filterUsers = complitionTwo
+            OtherFuncFor.otherFuncSingl.seachGenderUsers(gender: .male, oldArrayUsers: oldArrayUsers) { arrayOne, arrayTwo in
+                users = arrayOne
+                filterUsers = arrayTwo
             }
             collectionView.reloadData()
         case 2:
             segmentControlAge.selectedSegmentIndex = 0
             users.removeAll()
-            OtherFuncFor.otherFuncSingl.seachGenderUser(gender: .male, oldArrayUsers: oldArrayUsers) { complition in
-                users = complition
-            } arrayUsersOld: { complitionTwo in
-                filterUsers = complitionTwo
+            OtherFuncFor.otherFuncSingl.seachGenderUsers(gender: .female, oldArrayUsers: oldArrayUsers) { arrayOne, arrayTwo in
+                users = arrayOne
+                filterUsers = arrayTwo
             }
             collectionView.reloadData()
         default:
