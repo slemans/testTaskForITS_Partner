@@ -31,7 +31,7 @@ class OtherFuncFor{
     
     // for ViewControllerCollection, ViewControllerTableView
 
-    func seachGenderUsers(gender: Gender, oldArrayUsers: [User], completion: ([User], [User]) -> Void) {
+    private func sortedUsersArrayForGender(gender: Gender, oldArrayUsers: [User], completion: ([User], [User]) -> Void) {
         var filterUsers: [User] = []
         var users: [User] = []
         switch gender {
@@ -53,6 +53,41 @@ class OtherFuncFor{
             completion(users, filterUsers)
         }
     }
+    
+    
+    func sortedUsersArrayForAge(_ segmentedControl: Int, _ users: [User], _ oldArrayUsers: [User], _ filterUsers: [User]) -> [User]{
+        switch segmentedControl {
+        case 1:
+            return users.sorted { $0.age > $1.age }
+        case 2:
+            return users.sorted { $0.age < $1.age }
+        default:
+            if oldArrayUsers.count == users.count {
+                return oldArrayUsers
+            } else {
+                return filterUsers
+            }
+        }
+    }
+    
+    func fetchFoundArrayUserForGender(_ selectedSegmentIndex: Int, _ oldArrayUsers: [User], completion: ([User], [User]?) -> Void){
+        switch selectedSegmentIndex {
+        case 1:
+            sortedUsersArrayForGender(gender: .male, oldArrayUsers: oldArrayUsers) { arrayOne, arrayTwo in
+                completion(arrayOne, arrayTwo)
+            }
+        case 2:
+            sortedUsersArrayForGender(gender: .female, oldArrayUsers: oldArrayUsers) { arrayOne, arrayTwo in
+                completion(arrayOne, arrayTwo)
+            }
+        default:
+            let users = oldArrayUsers
+            completion(users, nil)
+        }
+    }
+    
+    
+    
     
     
     // for ViewControllerFullInfo

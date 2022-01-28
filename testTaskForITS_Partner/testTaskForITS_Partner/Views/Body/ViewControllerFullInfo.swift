@@ -19,6 +19,7 @@ class ViewControllerFullInfo: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         icon.image = OtherFuncFor.otherFuncSingl.getImagesIcon(gender: userFullInformation.gender)
         array = OtherFuncFor.otherFuncSingl.createArrayUser(user: userFullInformation)
         putImage(image: userFullInformation.picture)

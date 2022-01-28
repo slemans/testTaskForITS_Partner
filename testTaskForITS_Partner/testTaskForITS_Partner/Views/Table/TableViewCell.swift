@@ -13,8 +13,6 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var age: UILabel!
-    
-    var user: User!
 
     override func awakeFromNib() {
         super.awakeFromNib()
