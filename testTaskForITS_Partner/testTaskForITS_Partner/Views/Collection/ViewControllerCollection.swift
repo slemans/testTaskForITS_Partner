@@ -19,12 +19,14 @@ class ViewControllerCollection: UIViewController {
     var users: [User] = []
     var oldArrayUsers: [User] = []
     var filterUsers: [User] = []
+    let otherFuncForProject = OtherFuncFor.otherFuncSingl
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         getUrlSession()
     }
+    
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let ViewControllerFullInfoVC = segue.destination as? ViewControllerFullInfo {
@@ -47,32 +49,18 @@ class ViewControllerCollection: UIViewController {
     }
 
     @IBAction func segmentedControlGramedAction(_ sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
-        case 1:
-            segmentControlAge.selectedSegmentIndex = 0
-            users.removeAll()
-            OtherFuncFor.otherFuncSingl.seachGenderUsers(gender: .male, oldArrayUsers: oldArrayUsers) { arrayOne, arrayTwo in
-                users = arrayOne
+        segmentControlAge.selectedSegmentIndex = 0
+        otherFuncForProject.fetchFoundArrayUserForGender(sender.selectedSegmentIndex, oldArrayUsers) { arrayOne, arrayTwo in
+            users = arrayOne
+            if let arrayTwo = arrayTwo{
                 filterUsers = arrayTwo
             }
-            collectionView.reloadData()
-        case 2:
-            segmentControlAge.selectedSegmentIndex = 0
-            users.removeAll()
-            OtherFuncFor.otherFuncSingl.seachGenderUsers(gender: .female, oldArrayUsers: oldArrayUsers) { arrayOne, arrayTwo in
-                users = arrayOne
-                filterUsers = arrayTwo
-            }
-            collectionView.reloadData()
-        default:
-            segmentControlAge.selectedSegmentIndex = 0
-            users = oldArrayUsers
-            collectionView.reloadData()
         }
+        collectionView.reloadData()
     }
 
     @IBAction func segmentedControlAgeCollectionView(_ sender: UISegmentedControl) {
-        users = OtherFuncFor.otherFuncSingl.sortedUsersArrayForAge(sender.selectedSegmentIndex, users, oldArrayUsers, filterUsers)
+        users = otherFuncForProject.sortedUsersArrayForAge(sender.selectedSegmentIndex, users, oldArrayUsers, filterUsers)
         collectionView.reloadData()
     }
 

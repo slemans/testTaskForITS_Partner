@@ -13,8 +13,6 @@ class CollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var content: UIView!
     
-    var user: User!
-    
     func fetchDataUser(user: User){
         imageIcon.image = OtherFuncFor.otherFuncSingl.getImagesIcon(gender: user.gender)
         name.text = user.name
