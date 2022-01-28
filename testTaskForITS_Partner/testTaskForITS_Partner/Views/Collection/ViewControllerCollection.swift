@@ -71,25 +71,9 @@ class ViewControllerCollection: UIViewController {
         }
     }
 
-    @IBAction func segmentedControlAge(_ sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
-        case 1:
-            let decrease = users.sorted { $0.age > $1.age }
-            users = decrease
-            collectionView.reloadData()
-        case 2:
-            let increases = users.sorted { $0.age < $1.age }
-            users = increases
-            collectionView.reloadData()
-        default:
-            if oldArrayUsers.count == users.count {
-                users = oldArrayUsers
-                collectionView.reloadData()
-            } else {
-                users = filterUsers
-                collectionView.reloadData()
-            }
-        }
+    @IBAction func segmentedControlAgeCollectionView(_ sender: UISegmentedControl) {
+        users = OtherFuncFor.otherFuncSingl.sortedUsersArrayForAge(sender.selectedSegmentIndex, users, oldArrayUsers, filterUsers)
+        collectionView.reloadData()
     }
 
     @IBAction func repiatBtAct() {

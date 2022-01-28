@@ -65,7 +65,7 @@
                                                                     </segment>
                                                                 </segments>
                                                                 <connections>
-                                                                    <action selector="segmentedControlAgeAct:" destination="BYZ-38-t0r" eventType="valueChanged" id="t6F-lE-2AB"/>
+                                                                    <action selector="segmentedControlAgeTableView:" destination="BYZ-38-t0r" eventType="valueChanged" id="sFC-IL-nen"/>
                                                                 </connections>
                                                             </segmentedControl>
                                                         </subviews>
@@ -232,7 +232,7 @@
                         <outlet property="activitiIndicator" destination="WtB-t1-X4L" id="gNB-Tm-drU"/>
                         <outlet property="repeatBt" destination="7eU-Zx-WtX" id="MNE-i8-5Ag"/>
                         <outlet property="secondView" destination="k6l-IH-tQ0" id="Ytj-Th-ssf"/>
-                        <outlet property="segmentControlAge" destination="u36-w4-yOb" id="0wm-LU-vWN"/>
+                        <outlet property="segmentControlAge" destination="u36-w4-yOb" id="oRA-gt-Y5p"/>
                         <outlet property="segmentControlGender" destination="5u0-mg-DEF" id="tWy-NG-adu"/>
                         <outlet property="tableView" destination="EKp-Yc-c1v" id="aTI-Sh-GM5"/>
                     </connections>
@@ -296,7 +296,7 @@
                                                                     </segment>
                                                                 </segments>
                                                                 <connections>
-                                                                    <action selector="segmentedControlAge:" destination="zJr-ts-koj" eventType="valueChanged" id="vfo-uL-spI"/>
+                                                                    <action selector="segmentedControlAgeCollectionView:" destination="zJr-ts-koj" eventType="valueChanged" id="Th9-tO-fZ3"/>
                                                                 </connections>
                                                             </segmentedControl>
                                                         </subviews>
@@ -458,7 +458,7 @@
                         <outlet property="collectionView" destination="gdV-zr-zxZ" id="bQ4-HX-8rV"/>
                         <outlet property="repeatBt" destination="pyf-7L-Ijn" id="Ovv-Rx-Qd9"/>
                         <outlet property="secondView" destination="LS4-CP-RhE" id="Lpe-mJ-DaC"/>
-                        <outlet property="segmentControlAge" destination="G4i-3e-DuL" id="qpP-Yw-AJh"/>
+                        <outlet property="segmentControlAge" destination="G4i-3e-DuL" id="7PF-Iw-kRd"/>
                         <outlet property="segmentControlGender" destination="qbb-AI-h2E" id="iYS-U9-Je6"/>
                         <segue destination="Hwh-ct-BMx" kind="show" identifier="segueFullVc" id="eDq-TS-7cn"/>
                     </connections>

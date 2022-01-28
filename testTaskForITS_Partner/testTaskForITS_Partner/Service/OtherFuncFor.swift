@@ -55,6 +55,24 @@ class OtherFuncFor{
     }
     
     
+    func sortedUsersArrayForAge(_ segmentedControl: Int, _ users: [User], _ oldArrayUsers: [User], _ filterUsers: [User]) -> [User]{
+        switch segmentedControl {
+        case 1:
+            return users.sorted { $0.age > $1.age }
+        case 2:
+            return users.sorted { $0.age < $1.age }
+        default:
+            if oldArrayUsers.count == users.count {
+                return oldArrayUsers
+            } else {
+                return filterUsers
+            }
+        }
+    }
+    
+    
+    
+    
     // for ViewControllerFullInfo
     func createArrayUser(user: User) -> [UserFull]{
         var array: [UserFull] = []

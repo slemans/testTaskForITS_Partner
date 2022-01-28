@@ -60,26 +60,11 @@ class ViewControllerTableView: UIViewController {
         }
     }
 
+
     
-    @IBAction func segmentedControlAgeAct(_ sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
-        case 1:
-            let decrease = users.sorted { $0.age > $1.age }
-            users = decrease
-            tableView.reloadData()
-        case 2:
-            let increases = users.sorted { $0.age < $1.age }
-            users = increases
-            tableView.reloadData()
-        default:
-            if oldArrayUsers.count == users.count{
-                users = oldArrayUsers
-                tableView.reloadData()
-            } else {
-                users = filterUsers
-                tableView.reloadData()
-            }
-        }
+    @IBAction func segmentedControlAgeTableView(_ sender: UISegmentedControl) {
+        users = OtherFuncFor.otherFuncSingl.sortedUsersArrayForAge(sender.selectedSegmentIndex, users, oldArrayUsers, filterUsers)
+        tableView.reloadData()
     }
     
     @IBAction func repiatBtAct() {
