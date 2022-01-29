@@ -82,7 +82,6 @@ extension MKMapView {
         _span.latitudeDelta *= delta;
         _span.longitudeDelta *= delta;
         _region.span = _span;
-
         setRegion(_region, animated: animated)
     }
 }
@@ -103,7 +102,6 @@ extension MKMapView {
         get {
             return log2(360 * (Double(self.frame.size.width / 256) / self.region.span.longitudeDelta)) + 1
         }
-
         set (newZoomLevel) {
             setCenterCoordinate(coordinate: self.centerCoordinate, zoomLevel: newZoomLevel, animated: false)
         }

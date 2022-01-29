@@ -7,16 +7,15 @@
 
 import UIKit
 
-class OtherFuncFor{
+class OtherFuncForWorkWithView{
     
-    static var otherFuncSingl = OtherFuncFor()
+    static var otherFuncSingl = OtherFuncForWorkWithView()
     private init() {}
     
     // for CollectionViewCell, TableViewCell
-    func getImagesIcon(gender: Gender) -> UIImage{
+    public func getImagesIcon(gender: Gender) -> UIImage{
         if gender == .male{
             return #imageLiteral(resourceName: "iconFamale")
-            
         } else {
             return #imageLiteral(resourceName: "male")
         }
@@ -30,7 +29,6 @@ class OtherFuncFor{
     }
     
     // for ViewControllerCollection, ViewControllerTableView
-
     private func sortedUsersArrayForGender(gender: Gender, oldArrayUsers: [User], completion: ([User], [User]) -> Void) {
         var filterUsers: [User] = []
         var users: [User] = []
@@ -93,26 +91,26 @@ class OtherFuncFor{
     // for ViewControllerFullInfo
     func createArrayUser(user: User) -> [UserFull]{
         var array: [UserFull] = []
-        array.append(UserFull(firstPart: "Телефон", lastPart: user.phone))
-        array.append(UserFull(firstPart: "Email", lastPart: user.email))
-        array.append(UserFull(firstPart: "Компания", lastPart: user.company))
-        array.append(UserFull(firstPart: "Возраст", lastPart: String(user.age)))
-        array.append(UserFull(firstPart: "Цвет глаз", lastPart: user.eyeColor))
-        array.append(UserFull(firstPart: "Средств", lastPart: user.balance))
-        array.append(UserFull(firstPart: "Id", lastPart: user.id))
-        array.append(UserFull(firstPart: "Адресс", lastPart: user.address))
-        array.append(UserFull(firstPart: "Любимый фрукт", lastPart: user.favoriteFruit))
-        array.append(UserFull(firstPart: "Дата регистрации", lastPart: user.registered))
-        array.append(UserFull(firstPart: "Описание", lastPart: user.about))
-        array.append(UserFull(firstPart: "Сообщения", lastPart: user.greeting))
-        array.append(UserFull(firstPart: "Пол", lastPart: user.gender.rawValue))
-        array.append(UserFull(firstPart: "Широта", lastPart: String(user.latitude)))
-        array.append(UserFull(firstPart: "Долгота", lastPart: String(user.longitude)))
-        array.append(UserFull(firstPart: "Активация", lastPart: String(user.isActive)))
-        array.append(UserFull(firstPart: "Index", lastPart: String(user.index)))
-        array.append(UserFull(firstPart: "Guid", lastPart: String(user.guid)))
-        array.append(UserFull(firstPart: "Друзья", lastPart: recalculateFriend(user: user)))
-        array.append(UserFull(firstPart: "Tag", lastPart: recalculateTagr(user: user)))
+        array.append(UserFull(firstPart: Parametrs.telefon.rawValue, lastPart: user.phone))
+        array.append(UserFull(firstPart: Parametrs.email.rawValue, lastPart: user.email))
+        array.append(UserFull(firstPart: Parametrs.company.rawValue, lastPart: user.company))
+        array.append(UserFull(firstPart: Parametrs.age.rawValue, lastPart: String(user.age)))
+        array.append(UserFull(firstPart: Parametrs.colorEyes.rawValue, lastPart: user.eyeColor))
+        array.append(UserFull(firstPart: Parametrs.means.rawValue, lastPart: user.balance))
+        array.append(UserFull(firstPart: Parametrs.id.rawValue, lastPart: user.id))
+        array.append(UserFull(firstPart: Parametrs.adress.rawValue, lastPart: user.address))
+        array.append(UserFull(firstPart: Parametrs.loveVegeteble.rawValue, lastPart: user.favoriteFruit))
+        array.append(UserFull(firstPart: Parametrs.dateRegistration.rawValue, lastPart: user.registered))
+        array.append(UserFull(firstPart: Parametrs.description.rawValue, lastPart: user.about))
+        array.append(UserFull(firstPart: Parametrs.messages.rawValue, lastPart: user.greeting))
+        array.append(UserFull(firstPart: Parametrs.gender.rawValue, lastPart: user.gender.rawValue))
+        array.append(UserFull(firstPart: Parametrs.latitude.rawValue, lastPart: String(user.latitude)))
+        array.append(UserFull(firstPart: Parametrs.longitude.rawValue, lastPart: String(user.longitude)))
+        array.append(UserFull(firstPart: Parametrs.activation.rawValue, lastPart: String(user.isActive)))
+        array.append(UserFull(firstPart: Parametrs.index.rawValue, lastPart: String(user.index)))
+        array.append(UserFull(firstPart: Parametrs.guid.rawValue, lastPart: String(user.guid)))
+        array.append(UserFull(firstPart: Parametrs.friends.rawValue, lastPart: recalculateFriend(user: user)))
+        array.append(UserFull(firstPart: Parametrs.tag.rawValue, lastPart: recalculateTagr(user: user)))
         return array
     }
     func recalculateFriend(user: User) -> String {
