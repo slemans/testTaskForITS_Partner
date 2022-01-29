@@ -19,15 +19,13 @@ class ViewControllerCollection: UIViewController {
     var users: [User] = []
     var oldArrayUsers: [User] = []
     var filterUsers: [User] = []
-    let otherFuncForProject = OtherFuncFor.otherFuncSingl
-
+    let otherFuncForProject = OtherFuncForWorkWithView.otherFuncSingl
 
     override func viewDidLoad() {
         super.viewDidLoad()
         getUrlSession()
     }
     
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let ViewControllerFullInfoVC = segue.destination as? ViewControllerFullInfo {
             ViewControllerFullInfoVC.userFullInformation = sender as? User

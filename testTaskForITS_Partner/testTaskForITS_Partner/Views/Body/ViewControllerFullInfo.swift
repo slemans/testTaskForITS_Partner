@@ -14,14 +14,12 @@ class ViewControllerFullInfo: UIViewController {
 
     var array: [UserFull] = []
     var userFullInformation: User!
-
-
+    let otherFuncForProject = OtherFuncForWorkWithView.otherFuncSingl
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        icon.image = OtherFuncFor.otherFuncSingl.getImagesIcon(gender: userFullInformation.gender)
-        array = OtherFuncFor.otherFuncSingl.createArrayUser(user: userFullInformation)
+        icon.image = otherFuncForProject.getImagesIcon(gender: userFullInformation.gender)
+        array = otherFuncForProject.createArrayUser(user: userFullInformation)
         putImage(image: userFullInformation.picture)
         navigationItem.title = userFullInformation.name
     }

@@ -19,7 +19,7 @@ class TableViewCell: UITableViewCell {
     }
 
     func fetchDataUser(user: User){
-        icon.image = OtherFuncFor.otherFuncSingl.getImagesIcon(gender: user.gender)
+        icon.image = OtherFuncForWorkWithView.otherFuncSingl.getImagesIcon(gender: user.gender)
         name.text = user.name
         age.text = String(user.age) + " лет"
     }

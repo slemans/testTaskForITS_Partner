@@ -19,7 +19,7 @@ class ViewControllerTableView: UIViewController {
     var users: [User] = []
     var oldArrayUsers: [User] = []
     var filterUsers: [User] = []
-    let otherFuncForProject = OtherFuncFor.otherFuncSingl
+    let otherFuncForProject = OtherFuncForWorkWithView.otherFuncSingl
     
     override func viewDidLoad() {
         super.viewDidLoad()

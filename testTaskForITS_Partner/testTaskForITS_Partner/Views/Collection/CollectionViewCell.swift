@@ -12,11 +12,12 @@ class CollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var age: UILabel!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var content: UIView!
+    let otherFuncForProject = OtherFuncForWorkWithView.otherFuncSingl
     
     func fetchDataUser(user: User){
-        imageIcon.image = OtherFuncFor.otherFuncSingl.getImagesIcon(gender: user.gender)
+        imageIcon.image = otherFuncForProject.getImagesIcon(gender: user.gender)
         name.text = user.name
         age.text = String(user.age)
-        content.backgroundColor = OtherFuncFor.otherFuncSingl.choseColor(gender: user.gender)
+        content.backgroundColor = otherFuncForProject.choseColor(gender: user.gender)
     }
 }

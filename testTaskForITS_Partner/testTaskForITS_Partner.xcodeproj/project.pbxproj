@@ -11,7 +11,7 @@
 		7FBF7BF82784CF6D005D83D9 /* TableViewCellFull.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBF7BF72784CF6D005D83D9 /* TableViewCellFull.swift */; };
 		7FBF7BFA2784D9AE005D83D9 /* UserFull.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBF7BF92784D9AE005D83D9 /* UserFull.swift */; };
 		7FBF7BFD2785D2C7005D83D9 /* MapVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBF7BFC2785D2C7005D83D9 /* MapVc.swift */; };
-		7FBF7C002785DDFC005D83D9 /* OtherFuncFor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBF7BFF2785DDFC005D83D9 /* OtherFuncFor.swift */; };
+		7FBF7C002785DDFC005D83D9 /* OtherFuncForWorkWithView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBF7BFF2785DDFC005D83D9 /* OtherFuncForWorkWithView.swift */; };
 		7FBF7C022785FA09005D83D9 /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBF7C012785FA09005D83D9 /* Artwork.swift */; };
 		7FBF7C052788E215005D83D9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBF7C042788E215005D83D9 /* Constants.swift */; };
 		7FBF7C0A278B589C005D83D9 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBF7C09278B589C005D83D9 /* CollectionViewCell.swift */; };
@@ -32,7 +32,7 @@
 		7FBF7BF72784CF6D005D83D9 /* TableViewCellFull.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellFull.swift; sourceTree = "<group>"; };
 		7FBF7BF92784D9AE005D83D9 /* UserFull.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFull.swift; sourceTree = "<group>"; };
 		7FBF7BFC2785D2C7005D83D9 /* MapVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVc.swift; sourceTree = "<group>"; };
-		7FBF7BFF2785DDFC005D83D9 /* OtherFuncFor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherFuncFor.swift; sourceTree = "<group>"; };
+		7FBF7BFF2785DDFC005D83D9 /* OtherFuncForWorkWithView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherFuncForWorkWithView.swift; sourceTree = "<group>"; };
 		7FBF7C012785FA09005D83D9 /* Artwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artwork.swift; sourceTree = "<group>"; };
 		7FBF7C042788E215005D83D9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7FBF7C09278B589C005D83D9 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
@@ -74,7 +74,7 @@
 		7FBF7BFE2785DDD7005D83D9 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				7FBF7BFF2785DDFC005D83D9 /* OtherFuncFor.swift */,
+				7FBF7BFF2785DDFC005D83D9 /* OtherFuncForWorkWithView.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -265,7 +265,7 @@
 				7FE3FACF27833A2000CE561E /* Users.swift in Sources */,
 				7FE3FAC8278335AB00CE561E /* ViewControllerTableView.swift in Sources */,
 				7FBF7BFA2784D9AE005D83D9 /* UserFull.swift in Sources */,
-				7FBF7C002785DDFC005D83D9 /* OtherFuncFor.swift in Sources */,
+				7FBF7C002785DDFC005D83D9 /* OtherFuncForWorkWithView.swift in Sources */,
 				7FBF7C0C278B5992005D83D9 /* ViewControllerCollection.swift in Sources */,
 				7FBF7C0A278B589C005D83D9 /* CollectionViewCell.swift in Sources */,
 				7FBF7BF82784CF6D005D83D9 /* TableViewCellFull.swift in Sources */,

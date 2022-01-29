@@ -40,8 +40,6 @@ struct User: Codable {
         self.eyeColor = user.eyeColor
         self.name = user.name
         self.gender = user.gender
-
-//        self.gender = user.gender
         self.company = user.company
         self.email = user.email
         self.phone = user.phone
