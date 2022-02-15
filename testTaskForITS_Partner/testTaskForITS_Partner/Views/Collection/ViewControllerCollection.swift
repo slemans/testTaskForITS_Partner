@@ -8,24 +8,23 @@
 import UIKit
 
 class ViewControllerCollection: UIViewController {
-
-    @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var repeatBt: UIButton!
-    @IBOutlet weak var activitiIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var segmentControlGender: UISegmentedControl!
-    @IBOutlet weak var segmentControlAge: UISegmentedControl!
-    @IBOutlet weak var secondView: UIView!
+    @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet var repeatBt: UIButton!
+    @IBOutlet var activitiIndicator: UIActivityIndicatorView!
+    @IBOutlet var segmentControlGender: UISegmentedControl!
+    @IBOutlet var segmentControlAge: UISegmentedControl!
+    @IBOutlet var secondView: UIView!
 
     var users: [User] = []
     var oldArrayUsers: [User] = []
     var filterUsers: [User] = []
-    let otherFuncForProject = OtherFuncForWorkWithView.otherFuncSingl
+    let otherFuncForProject = OtherFuncForWorkWithView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         getUrlSession()
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let ViewControllerFullInfoVC = segue.destination as? ViewControllerFullInfo {
             ViewControllerFullInfoVC.userFullInformation = sender as? User
@@ -50,7 +49,7 @@ class ViewControllerCollection: UIViewController {
         segmentControlAge.selectedSegmentIndex = 0
         otherFuncForProject.fetchFoundArrayUserForGender(sender.selectedSegmentIndex, oldArrayUsers) { arrayOne, arrayTwo in
             users = arrayOne
-            if let arrayTwo = arrayTwo{
+            if let arrayTwo = arrayTwo {
                 filterUsers = arrayTwo
             }
         }
@@ -69,12 +68,10 @@ class ViewControllerCollection: UIViewController {
         collectionView.reloadData()
         getUrlSession()
     }
-
 }
 
-
 extension ViewControllerCollection: UICollectionViewDataSource, UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_: UICollectionView, numberOfItemsInSection _: Int) -> Int {
         return users.count
     }
 
@@ -86,27 +83,31 @@ extension ViewControllerCollection: UICollectionViewDataSource, UICollectionView
         cell.content.layer.masksToBounds = true
         return cell
     }
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+    func collectionView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let user = users[indexPath.row]
         performSegue(withIdentifier: "segueFullVc", sender: user)
     }
 }
 
 extension ViewControllerCollection: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView, layout _: UICollectionViewLayout, sizeForItemAt _: IndexPath) -> CGSize {
         let itemPerRow: CGFloat = 2.0
         let padding = 5 * (itemPerRow + 1.0)
         let availableWidth = collectionView.frame.width - padding
         let widthPerItem = availableWidth / itemPerRow
         return CGSize(width: widthPerItem, height: 170)
     }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+
+    func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, insetForSectionAt _: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 5, left: 0, bottom: 0, right: 0)
     }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+
+    func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, minimumLineSpacingForSectionAt _: Int) -> CGFloat {
         return 13
     }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+
+    func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, minimumInteritemSpacingForSectionAt _: Int) -> CGFloat {
         return 0
     }
 }

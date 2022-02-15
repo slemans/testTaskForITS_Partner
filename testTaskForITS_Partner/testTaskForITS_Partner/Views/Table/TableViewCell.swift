@@ -8,21 +8,19 @@
 import UIKit
 
 class TableViewCell: UITableViewCell {
+    @IBOutlet var icon: UIImageView!
+    @IBOutlet var name: UILabel!
+    @IBOutlet var age: UILabel!
     
+    let otherFuncForWorkWithView = OtherFuncForWorkWithView()
     
-    @IBOutlet weak var icon: UIImageView!
-    @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var age: UILabel!
-
     override func awakeFromNib() {
         super.awakeFromNib()
     }
 
-    func fetchDataUser(user: User){
-        icon.image = OtherFuncForWorkWithView.otherFuncSingl.getImagesIcon(gender: user.gender)
+    func fetchDataUser(user: User) {
+        icon.image = otherFuncForWorkWithView.getImagesIcon(gender: user.gender)
         name.text = user.name
         age.text = String(user.age) + " лет"
     }
-
-
 }

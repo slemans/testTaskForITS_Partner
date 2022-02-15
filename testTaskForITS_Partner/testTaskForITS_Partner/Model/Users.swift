@@ -28,30 +28,30 @@ struct User: Codable {
         case id = "_id"
         case index, guid, isActive, balance, picture, age, eyeColor, name, gender, company, email, phone, address, about, registered, latitude, longitude, tags, friends, greeting, favoriteFruit
     }
-    
+
     init?(user: User) {
-        self.id = user.id
-        self.index = user.index
-        self.guid = user.guid
-        self.isActive = user.isActive
-        self.balance = user.balance
-        self.picture = user.picture
-        self.age = user.age
-        self.eyeColor = user.eyeColor
-        self.name = user.name
-        self.gender = user.gender
-        self.company = user.company
-        self.email = user.email
-        self.phone = user.phone
-        self.address = user.address
-        self.about = user.about
-        self.registered = user.registered
-        self.latitude = user.latitude
-        self.longitude = user.longitude
-        self.tags = user.tags
-        self.friends = user.friends
-        self.greeting = user.greeting
-        self.favoriteFruit = user.favoriteFruit
+        id = user.id
+        index = user.index
+        guid = user.guid
+        isActive = user.isActive
+        balance = user.balance
+        picture = user.picture
+        age = user.age
+        eyeColor = user.eyeColor
+        name = user.name
+        gender = user.gender
+        company = user.company
+        email = user.email
+        phone = user.phone
+        address = user.address
+        about = user.about
+        registered = user.registered
+        latitude = user.latitude
+        longitude = user.longitude
+        tags = user.tags
+        friends = user.friends
+        greeting = user.greeting
+        favoriteFruit = user.favoriteFruit
     }
 }
 
@@ -61,6 +61,6 @@ struct Friend: Codable {
 }
 
 enum Gender: String, Codable {
-    case male = "male"
-    case female = "female"
+    case male
+    case female
 }

@@ -8,13 +8,13 @@
 import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var imageIcon: UIImageView!
-    @IBOutlet weak var age: UILabel!
-    @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var content: UIView!
-    let otherFuncForProject = OtherFuncForWorkWithView.otherFuncSingl
-    
-    func fetchDataUser(user: User){
+    @IBOutlet var imageIcon: UIImageView!
+    @IBOutlet var age: UILabel!
+    @IBOutlet var name: UILabel!
+    @IBOutlet var content: UIView!
+    let otherFuncForProject = OtherFuncForWorkWithView()
+
+    func fetchDataUser(user: User) {
         imageIcon.image = otherFuncForProject.getImagesIcon(gender: user.gender)
         name.text = user.name
         age.text = String(user.age)
