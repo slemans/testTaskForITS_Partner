@@ -8,8 +8,6 @@
 import UIKit
 
 class OtherFuncForWorkWithView {
-    static var otherFuncSingl = OtherFuncForWorkWithView()
-    private init() {}
 
     // for CollectionViewCell, TableViewCell
     public func getImagesIcon(gender: Gender) -> UIImage {

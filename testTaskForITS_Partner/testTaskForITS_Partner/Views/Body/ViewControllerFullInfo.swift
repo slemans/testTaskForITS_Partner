@@ -13,7 +13,7 @@ class ViewControllerFullInfo: UIViewController {
 
     var array: [UserFull] = []
     var userFullInformation: User!
-    let otherFuncForProject = OtherFuncForWorkWithView.otherFuncSingl
+    let otherFuncForProject = OtherFuncForWorkWithView()
 
     override func viewDidLoad() {
         super.viewDidLoad()

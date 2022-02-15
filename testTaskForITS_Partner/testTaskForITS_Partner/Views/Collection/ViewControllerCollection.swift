@@ -18,7 +18,7 @@ class ViewControllerCollection: UIViewController {
     var users: [User] = []
     var oldArrayUsers: [User] = []
     var filterUsers: [User] = []
-    let otherFuncForProject = OtherFuncForWorkWithView.otherFuncSingl
+    let otherFuncForProject = OtherFuncForWorkWithView()
 
     override func viewDidLoad() {
         super.viewDidLoad()

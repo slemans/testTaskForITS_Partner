@@ -12,13 +12,14 @@ class TableViewCell: UITableViewCell {
     @IBOutlet var name: UILabel!
     @IBOutlet var age: UILabel!
     
+    let otherFuncForWorkWithView = OtherFuncForWorkWithView()
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
 
     func fetchDataUser(user: User) {
-        icon.image = OtherFuncForWorkWithView.otherFuncSingl.getImagesIcon(gender: user.gender)
+        icon.image = otherFuncForWorkWithView.getImagesIcon(gender: user.gender)
         name.text = user.name
         age.text = String(user.age) + " лет"
     }

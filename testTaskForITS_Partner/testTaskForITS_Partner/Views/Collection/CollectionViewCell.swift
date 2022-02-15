@@ -12,7 +12,7 @@ class CollectionViewCell: UICollectionViewCell {
     @IBOutlet var age: UILabel!
     @IBOutlet var name: UILabel!
     @IBOutlet var content: UIView!
-    let otherFuncForProject = OtherFuncForWorkWithView.otherFuncSingl
+    let otherFuncForProject = OtherFuncForWorkWithView()
 
     func fetchDataUser(user: User) {
         imageIcon.image = otherFuncForProject.getImagesIcon(gender: user.gender)

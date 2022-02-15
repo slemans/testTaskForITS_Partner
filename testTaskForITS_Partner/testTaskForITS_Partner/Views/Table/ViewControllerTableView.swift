@@ -18,7 +18,7 @@ class ViewControllerTableView: UIViewController {
     var users: [User] = []
     var oldArrayUsers: [User] = []
     var filterUsers: [User] = []
-    let otherFuncForProject = OtherFuncForWorkWithView.otherFuncSingl
+    let otherFuncForProject = OtherFuncForWorkWithView()
     
 
     override func viewDidLoad() {
@@ -60,7 +60,7 @@ class ViewControllerTableView: UIViewController {
         getUrlSession()
     }
 
-     func getUrlSession() {
+    private func getUrlSession() {
         ServiseAPI.apiSingl.fetchUrlSession { [weak self] users in
             self?.oldArrayUsers = users
             self?.users = users
@@ -71,10 +71,6 @@ class ViewControllerTableView: UIViewController {
             }
         }
     }
-    
-    
-    
-    
 }
 
 extension ViewControllerTableView: UITableViewDelegate, UITableViewDataSource {
