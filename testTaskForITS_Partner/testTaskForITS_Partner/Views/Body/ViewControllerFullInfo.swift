@@ -8,9 +8,8 @@
 import UIKit
 
 class ViewControllerFullInfo: UIViewController {
-
-    @IBOutlet weak var icon: UIImageView!
-    @IBOutlet weak var imageUser: UIImageView!
+    @IBOutlet var icon: UIImageView!
+    @IBOutlet var imageUser: UIImageView!
 
     var array: [UserFull] = []
     var userFullInformation: User!
@@ -24,7 +23,7 @@ class ViewControllerFullInfo: UIViewController {
         navigationItem.title = userFullInformation.name
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
         if let MapVc = segue.destination as? MapVc {
             MapVc.latitude = userFullInformation.latitude
             MapVc.longitude = userFullInformation.longitude
@@ -32,12 +31,9 @@ class ViewControllerFullInfo: UIViewController {
         }
     }
 
-
-
-
     private func putImage(image: String?) {
         guard let image = image,
-            let urlImg = URL(string: image) else { return }
+              let urlImg = URL(string: image) else { return }
         URLSession.shared.dataTask(with: urlImg) { [weak self] data, _, _ in
             let queue = DispatchQueue.global(qos: .utility)
             queue.async {
@@ -50,14 +46,13 @@ class ViewControllerFullInfo: UIViewController {
         }.resume()
     }
 
-    @IBAction func returnBt(_ sender: UIBarButtonItem) {
+    @IBAction func returnBt(_: UIBarButtonItem) {
         navigationController?.popToRootViewController(animated: true)
     }
-
 }
 
 extension ViewControllerFullInfo: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         array.count
     }
 

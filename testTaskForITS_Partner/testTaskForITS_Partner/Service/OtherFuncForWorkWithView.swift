@@ -7,27 +7,27 @@
 
 import UIKit
 
-class OtherFuncForWorkWithView{
-    
+class OtherFuncForWorkWithView {
     static var otherFuncSingl = OtherFuncForWorkWithView()
     private init() {}
-    
+
     // for CollectionViewCell, TableViewCell
-    public func getImagesIcon(gender: Gender) -> UIImage{
-        if gender == .male{
+    public func getImagesIcon(gender: Gender) -> UIImage {
+        if gender == .male {
             return #imageLiteral(resourceName: "iconFamale")
         } else {
             return #imageLiteral(resourceName: "male")
         }
     }
-    func choseColor(gender: Gender) -> UIColor{
-        if gender == .male{
+
+    func choseColor(gender: Gender) -> UIColor {
+        if gender == .male {
             return #colorLiteral(red: 1, green: 0.09483547046, blue: 0.01818972419, alpha: 1)
         } else {
             return #colorLiteral(red: 0.1508811976, green: 0.211440719, blue: 1, alpha: 1)
         }
     }
-    
+
     // for ViewControllerCollection, ViewControllerTableView
     private func sortedUsersArrayForGender(gender: Gender, oldArrayUsers: [User], completion: ([User], [User]) -> Void) {
         var filterUsers: [User] = []
@@ -51,9 +51,8 @@ class OtherFuncForWorkWithView{
             completion(users, filterUsers)
         }
     }
-    
-    
-    func sortedUsersArrayForAge(_ segmentedControl: Int, _ users: [User], _ oldArrayUsers: [User], _ filterUsers: [User]) -> [User]{
+
+    func sortedUsersArrayForAge(_ segmentedControl: Int, _ users: [User], _ oldArrayUsers: [User], _ filterUsers: [User]) -> [User] {
         switch segmentedControl {
         case 1:
             return users.sorted { $0.age > $1.age }
@@ -67,8 +66,8 @@ class OtherFuncForWorkWithView{
             }
         }
     }
-    
-    func fetchFoundArrayUserForGender(_ selectedSegmentIndex: Int, _ oldArrayUsers: [User], completion: ([User], [User]?) -> Void){
+
+    func fetchFoundArrayUserForGender(_ selectedSegmentIndex: Int, _ oldArrayUsers: [User], completion: ([User], [User]?) -> Void) {
         switch selectedSegmentIndex {
         case 1:
             sortedUsersArrayForGender(gender: .male, oldArrayUsers: oldArrayUsers) { arrayOne, arrayTwo in
@@ -83,13 +82,9 @@ class OtherFuncForWorkWithView{
             completion(users, nil)
         }
     }
-    
-    
-    
-    
-    
+
     // for ViewControllerFullInfo
-    func createArrayUser(user: User) -> [UserFull]{
+    func createArrayUser(user: User) -> [UserFull] {
         var array: [UserFull] = []
         array.append(UserFull(firstPart: Parametrs.telefon.rawValue, lastPart: user.phone))
         array.append(UserFull(firstPart: Parametrs.email.rawValue, lastPart: user.email))
@@ -113,6 +108,7 @@ class OtherFuncForWorkWithView{
         array.append(UserFull(firstPart: Parametrs.tag.rawValue, lastPart: recalculateTagr(user: user)))
         return array
     }
+
     func recalculateFriend(user: User) -> String {
         var stringFriend = ""
         for friend in user.friends {
@@ -120,6 +116,7 @@ class OtherFuncForWorkWithView{
         }
         return stringFriend
     }
+
     func recalculateTagr(user: User) -> String {
         var stringTag = ""
         for tag in user.tags {
@@ -127,6 +124,4 @@ class OtherFuncForWorkWithView{
         }
         return stringTag
     }
-   
-    
 }

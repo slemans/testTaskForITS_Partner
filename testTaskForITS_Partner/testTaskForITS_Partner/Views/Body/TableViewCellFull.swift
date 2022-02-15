@@ -8,16 +8,15 @@
 import UIKit
 
 class TableViewCellFull: UITableViewCell {
-
-    @IBOutlet weak var infoPart: UILabel!
-    @IBOutlet weak var userInform: UILabel!
+    @IBOutlet var infoPart: UILabel!
+    @IBOutlet var userInform: UILabel!
     var imageUrl: String!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }
 
-    func fetchDataUserFull(userFull: UserFull){
+    func fetchDataUserFull(userFull: UserFull) {
         infoPart.text = userFull.firstPart
         userInform.text = userFull.lastPart
     }

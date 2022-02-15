@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 public enum Parametrs: String {
     case telefon = "Телефон"
     case email = "Email"
@@ -30,6 +29,3 @@ public enum Parametrs: String {
     case messages = "Сообщения"
     case longitude = "Долгота"
 }
-
-
-

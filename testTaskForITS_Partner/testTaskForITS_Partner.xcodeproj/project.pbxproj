@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7FB2CB4E27BAC48100606F0E /* UIButtonExtenshen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB2CB4D27BAC48100606F0E /* UIButtonExtenshen.swift */; };
+		7FB2CB5027BAC6F700606F0E /* UIViewExtenshen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB2CB4F27BAC6F700606F0E /* UIViewExtenshen.swift */; };
 		7FBF7BF62784CC2C005D83D9 /* ViewControllerFullInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBF7BF52784CC2C005D83D9 /* ViewControllerFullInfo.swift */; };
 		7FBF7BF82784CF6D005D83D9 /* TableViewCellFull.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBF7BF72784CF6D005D83D9 /* TableViewCellFull.swift */; };
 		7FBF7BFA2784D9AE005D83D9 /* UserFull.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBF7BF92784D9AE005D83D9 /* UserFull.swift */; };
@@ -28,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7FB2CB4D27BAC48100606F0E /* UIButtonExtenshen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtenshen.swift; sourceTree = "<group>"; };
+		7FB2CB4F27BAC6F700606F0E /* UIViewExtenshen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtenshen.swift; sourceTree = "<group>"; };
 		7FBF7BF52784CC2C005D83D9 /* ViewControllerFullInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFullInfo.swift; sourceTree = "<group>"; };
 		7FBF7BF72784CF6D005D83D9 /* TableViewCellFull.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellFull.swift; sourceTree = "<group>"; };
 		7FBF7BF92784D9AE005D83D9 /* UserFull.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFull.swift; sourceTree = "<group>"; };
@@ -61,6 +65,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7FB2CB4C27BAC46700606F0E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				7FB2CB4D27BAC48100606F0E /* UIButtonExtenshen.swift */,
+				7FB2CB4F27BAC6F700606F0E /* UIViewExtenshen.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		7FBF7BFB2785D2A0005D83D9 /* Body */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +128,7 @@
 		7FE3FAAA2783307800CE561E /* testTaskForITS_Partner */ = {
 			isa = PBXGroup;
 			children = (
+				7FB2CB4C27BAC46700606F0E /* Extension */,
 				7FBF7C032788E202005D83D9 /* Constants */,
 				7FBF7BFE2785DDD7005D83D9 /* Service */,
 				7FE3FAC42783319400CE561E /* Model */,
@@ -264,6 +278,7 @@
 			files = (
 				7FE3FACF27833A2000CE561E /* Users.swift in Sources */,
 				7FE3FAC8278335AB00CE561E /* ViewControllerTableView.swift in Sources */,
+				7FB2CB5027BAC6F700606F0E /* UIViewExtenshen.swift in Sources */,
 				7FBF7BFA2784D9AE005D83D9 /* UserFull.swift in Sources */,
 				7FBF7C002785DDFC005D83D9 /* OtherFuncForWorkWithView.swift in Sources */,
 				7FBF7C0C278B5992005D83D9 /* ViewControllerCollection.swift in Sources */,
@@ -275,6 +290,7 @@
 				7FE3FACB278336C000CE561E /* TableViewCell.swift in Sources */,
 				7FE3FAAE2783307800CE561E /* SceneDelegate.swift in Sources */,
 				7FBF7BFD2785D2C7005D83D9 /* MapVc.swift in Sources */,
+				7FB2CB4E27BAC48100606F0E /* UIButtonExtenshen.swift in Sources */,
 				7FE3FACD2783392700CE561E /* ServiseAPI.swift in Sources */,
 				7FBF7BF62784CC2C005D83D9 /* ViewControllerFullInfo.swift in Sources */,
 			);
